@@ -1,0 +1,44 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="max-w-4xl w-full mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <!-- Car Selection -->
+    <div class="mb-6">
+      <label for="car" class="block text-gray-700 text-sm font-semibold mb-2">Car</label>
+      <select id="car" formControlName="carId" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
+        <option *ngFor="let car of cars" [value]="car.id">{{ car.id }} {{ car.model }}</option>
+      </select>
+      <div *ngIf="jobForm.controls['carId'].invalid && jobForm.controls['carId'].touched" class="text-red-500 text-sm mt-1">
+        Car is required.
+      </div>
+    </div>
+  
+    <!-- Job Description -->
+    <div class="mb-6">
+      <label for="description" class="block text-gray-700 text-sm font-semibold mb-2">Job Description</label>
+      <textarea id="description" formControlName="description" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5" rows="4"></textarea>
+      <div *ngIf="jobForm.controls['description'].invalid && jobForm.controls['description'].touched" class="text-red-500 text-sm mt-1">
+        Description is required.
+      </div>
+    </div>
+  
+    <!-- Assigned Mechanic -->
+    <div class="mb-6">
+      <label for="mechanic" class="block text-gray-700 text-sm font-semibold mb-2">Assigned Mechanic</label>
+      <input id="mechanic" type="text" formControlName="mechanic" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
+      <div *ngIf="jobForm.controls['mechanic'].invalid && jobForm.controls['mechanic'].touched" class="text-red-500 text-sm mt-1">
+        Mechanic is required.
+      </div>
+    </div>
+  
+    <!-- Estimated Completion Time -->
+    <div class="mb-6">
+      <label for="estimatedCompletionTime" class="block text-gray-700 text-sm font-semibold mb-2">Estimated Completion Time</label>
+      <input id="estimatedCompletionTime" type="datetime-local" formControlName="estimatedCompletionTime" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
+      <div *ngIf="jobForm.controls['estimatedCompletionTime'].invalid && jobForm.controls['estimatedCompletionTime'].touched" class="text-red-500 text-sm mt-1">
+        Estimated Completion Time is required.
+      </div>
+    </div>
+  
+    <button type="submit" class="bg-blue-500 text-white p-2.5 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" [disabled]="jobForm.invalid">
+      Add Job
+    </button>
+  </form>
+  
