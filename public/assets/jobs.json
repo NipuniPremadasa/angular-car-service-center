@@ -1,0 +1,5 @@
+[
+    { "id": 1, "carId": 1, "description": "Oil change", "mechanic": "John Doe", "status": "Not Started" },
+    { "id": 2, "carId": 2, "description": "Brake replacement", "mechanic": "Jane Smith", "status": "In Progress" }
+  ]
+  

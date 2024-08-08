@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CarService {
-  private carUrl = '../../assets/cars.json'; // For GET requests
+  private carUrl = 'assets/cars.json'; // For GET requests
 
   constructor(private http: HttpClient) {}
 

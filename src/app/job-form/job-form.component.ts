@@ -31,9 +31,6 @@ export class JobFormComponent {
   ngOnInit(): void {
     this.carService.getCars().subscribe((data) => {
       this.cars = data;
-      this.cars.forEach(car => {
-        console.log('Car ID:', car.id);
-      });
     });
   }
 
