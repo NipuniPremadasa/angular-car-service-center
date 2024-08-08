@@ -23,7 +23,7 @@ export class JobFormComponent {
     this.jobForm = this.fb.group({
       carId: ['', Validators.required],
       description: ['', Validators.required],
-      mechanic: ['', Validators.required],
+      mechanic: ['', Validators.required], 
       estimatedCompletionTime: ['', Validators.required]
     });
   }
