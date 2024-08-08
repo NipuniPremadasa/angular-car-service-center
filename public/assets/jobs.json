@@ -75,5 +75,16 @@
     "description": "Tire rotation",
     "mechanic": "John Bill",
     "status": "In Progress"
+  },
+  {
+    "id": 2,
+    "carId": {
+      "VIN": "DEF 456",
+      "make": "Honda",
+      "model": "Civic"
+    },
+    "description": "Brake replacement",
+    "mechanic": "Amal Kumara",
+    "status": "Not Started"
   }
 ]
