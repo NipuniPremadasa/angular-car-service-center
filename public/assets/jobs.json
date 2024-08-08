@@ -1,80 +1,79 @@
 [
-    { 
-        "id": 1, 
-        "carId": {
-            "VIN": "ABC 123",
-            "make": "Toyota",
-            "model": "Camry"
-        }, 
-        "description": "Oil change", 
-        "mechanic": "John Bill", 
-        "status": "Not Started" 
+  {
+    "id": 1,
+    "carId": {
+      "VIN": "ABC 123",
+      "make": "Toyota",
+      "model": "Camry"
     },
-    { 
-        "id": 2, 
-        "carId": {
-            "VIN": "DEF 456",
-            "make": "Honda",
-            "model": "Civic"
-        },
-        "description": "Brake replacement", 
-        "mechanic": "Amal Kumara", 
-        "status": "In Progress" 
+    "description": "Oil change",
+    "mechanic": "John Bill",
+    "status": "Not Started"
+  },
+  {
+    "id": 2,
+    "carId": {
+      "VIN": "DEF 456",
+      "make": "Honda",
+      "model": "Civic"
     },
-    {
-        "id": 3, 
-        "carId": {
-            "VIN": "GHI 789",
-            "make": "Nissan", 
-            "model": "Sunny" 
-        },
-        "description": "Tire rotation", 
-        "mechanic": "Tom Swift", 
-        "status": "Completed"
+    "description": "Brake replacement",
+    "mechanic": "Amal Kumara",
+    "status": "In Progress"
+  },
+  {
+    "id": 3,
+    "carId": {
+      "VIN": "GHI 789",
+      "make": "Nissan",
+      "model": "Sunny"
     },
-    {
-        "id": 4,
-        "carId": {
-            "VIN": "JKL 101",
-            "make": "Toyota", 
-            "model": "Corolla"
-        },
-        "description": "Engine oil change",
-        "mechanic": "Sam Trigger",
-        "status": "Not Started"
+    "description": "Tire rotation",
+    "mechanic": "Tom Swift",
+    "status": "Completed"
+  },
+  {
+    "id": 4,
+    "carId": {
+      "VIN": "JKL 101",
+      "make": "Toyota",
+      "model": "Corolla"
     },
-    {
-        "id": 5,
-        "carId": {
-            "VIN": "MNO 123",
-            "make": "Honda", 
-            "model": "Fit"
-        },
-        "description": "Battery replacement",
-        "mechanic": "Tom Swift",
-        "status": "In Progress"
+    "description": "Engine oil change",
+    "mechanic": "Sam Trigger",
+    "status": "Not Started"
+  },
+  {
+    "id": 5,
+    "carId": {
+      "VIN": "MNO 123",
+      "make": "Honda",
+      "model": "Fit"
     },
-    {
-        "id": 6,
-        "carId": {
-            "VIN": "PQR 113",
-            "make": "Nissan", 
-            "model": "Leaf"
-        },
-        "description": "Coolant flush",
-        "mechanic": "Amal Kumara",
-        "status": "Completed"
+    "description": "Battery replacement",
+    "mechanic": "Tom Swift",
+    "status": "In Progress"
+  },
+  {
+    "id": 6,
+    "carId": {
+      "VIN": "PQR 113",
+      "make": "Nissan",
+      "model": "Leaf"
     },
-    {
-        "id": 7,
-        "carId": {
-            "VIN": "STU 114",
-            "make": "Toyota", 
-            "model": "Prius"
-        },
-        "description": "Tire rotation",
-        "mechanic": "John Bill",
-        "status": "In Progress"
-    } 
-  ]
-  
+    "description": "Coolant flush",
+    "mechanic": "Amal Kumara",
+    "status": "Completed"
+  },
+  {
+    "id": 7,
+    "carId": {
+      "VIN": "STU 114",
+      "make": "Toyota",
+      "model": "Prius"
+    },
+    "description": "Tire rotation",
+    "mechanic": "John Bill",
+    "status": "In Progress"
+  }
+]

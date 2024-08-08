@@ -1,100 +1,93 @@
 [
-    { 
-        "carId": 1, 
-        "make": "Toyota", 
-        "model": "Camry", 
-        "year": 2012, 
-        "VIN":"ABC 123",
-        "owner details":{
-            "name": "John Doe",
-            "contact number": "123-456-7890",
-            "email": "john@example",
-            "address": "Colombo, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 2, 
-        "make": "Honda", 
-        "model": "Civic", 
-        "year": 2015, 
-        "VIN":"DEF 456",
-        "owner details":{
-            "name": "Jane Smith",
-            "contact number": "123-000-7890",
-            "email": "jane@example",
-            "address": "Colombo, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 3, 
-        "make": "Nissan", 
-        "model": "Sunny", 
-        "year": 2018, 
-        "VIN":"GHI 789",
-        "owner details":{
-            "name": "Ann tiney",
-            "contact number": "123-456-000",
-            "email": "ann@example",
-            "address": "Gampaha, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 4, 
-        "make": "Toyota", 
-        "model": "Corolla", 
-        "year": 2019, 
-        "VIN":"JKL 101",
-        "owner details":{
-            "name": "Sarath Perera",
-            "contact number": "123-006-7890",
-            "email": "sarath@example",
-            "address": "Anuradhapura, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 5, 
-        "make": "Honda", 
-        "model": "Fit", 
-        "year": 2020, 
-        "VIN":"MNO 112",
-        "owner details":{
-            "name": "Priya Silva",
-            "contact number": "123-456-0890",
-            "email": "priya@example",
-            "address": "Galle, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 6, 
-        "make": "Nissan", 
-        "model": "Leaf", 
-        "year": 2021, 
-        "VIN":"PQR 113",
-        "owner details":{
-            "name": "Karen Peter",
-            "contact number": "123-456-7000",
-            "email": "karen@example",
-            "address": "Jaffna, Sri Lanka"
-        }
-      
-    },
-    { 
-        "carId": 7, 
-        "make": "Toyota", 
-        "model": "Prius",
-        "year": 2022, 
-        "VIN":"STU 114",
-        "owner details":{
-            "name": "Silva Perera",
-            "contact number": "123-400-7890",
-            "email": "silva@example",
-            "address": "Colombo, Sri Lanka"
-        }}
+  {
+    "carId": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2012,
+    "VIN": "ABC 123",
+    "owner details": {
+      "name": "John Doe",
+      "contact number": "123-456-7890",
+      "email": "john@example",
+      "address": "Colombo, Sri Lanka"
+    }
+  },
+  {
+    "carId": 2,
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2015,
+    "VIN": "DEF 456",
+    "owner details": {
+      "name": "Jane Smith",
+      "contact number": "123-000-7890",
+      "email": "jane@example",
+      "address": "Colombo, Sri Lanka"
+    }
+  },
+  {
+    "carId": 3,
+    "make": "Nissan",
+    "model": "Sunny",
+    "year": 2018,
+    "VIN": "GHI 789",
+    "owner details": {
+      "name": "Ann tiney",
+      "contact number": "123-456-000",
+      "email": "ann@example",
+      "address": "Gampaha, Sri Lanka"
+    }
+  },
+  {
+    "carId": 4,
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2019,
+    "VIN": "JKL 101",
+    "owner details": {
+      "name": "Sarath Perera",
+      "contact number": "123-006-7890",
+      "email": "sarath@example",
+      "address": "Anuradhapura, Sri Lanka"
+    }
+  },
+  {
+    "carId": 5,
+    "make": "Honda",
+    "model": "Fit",
+    "year": 2020,
+    "VIN": "MNO 112",
+    "owner details": {
+      "name": "Priya Silva",
+      "contact number": "123-456-0890",
+      "email": "priya@example",
+      "address": "Galle, Sri Lanka"
+    }
+  },
+  {
+    "carId": 6,
+    "make": "Nissan",
+    "model": "Leaf",
+    "year": 2021,
+    "VIN": "PQR 113",
+    "owner details": {
+      "name": "Karen Peter",
+      "contact number": "123-456-7000",
+      "email": "karen@example",
+      "address": "Jaffna, Sri Lanka"
+    }
+  },
+  {
+    "carId": 7,
+    "make": "Toyota",
+    "model": "Prius",
+    "year": 2022,
+    "VIN": "STU 114",
+    "owner details": {
+      "name": "Silva Perera",
+      "contact number": "123-400-7890",
+      "email": "silva@example",
+      "address": "Colombo, Sri Lanka"
+    }
+  }
 ]
-
-  

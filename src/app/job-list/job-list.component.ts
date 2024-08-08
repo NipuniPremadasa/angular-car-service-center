@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { JobService } from '../job-form/job.service';
 import { CommonModule } from '@angular/common';
 import { JobFormComponent } from '../job-form/job-form.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [CommonModule, JobFormComponent],
+  imports: [CommonModule, JobFormComponent, NavbarComponent],
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.scss'
 })
