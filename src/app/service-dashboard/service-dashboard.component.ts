@@ -21,7 +21,7 @@ export class ServiceDashboardComponent {
   numberOfInProgressJobs: number = 0;
   numberOfCompleterdJobs: number = 0;
   numberOfNotStartedJobs: number = 0;
-  chart: any;
+  chart: Chart | undefined;
   config: any;
 
   constructor(
