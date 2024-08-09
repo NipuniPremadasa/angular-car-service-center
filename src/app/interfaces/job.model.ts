@@ -6,7 +6,7 @@ export interface Car {
   
   export interface Job {
     id: number;
-    car: Car; // Use 'car' instead of 'carId' for clarity
+    car: Car; 
     description: string;
     mechanic: string;
     status: 'Not Started' | 'In Progress' | 'Completed';
