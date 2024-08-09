@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CarService {
   private carUrl = 'assets/cars.json'; // For GET requests
@@ -16,6 +16,8 @@ export class CarService {
 
   // This method is meant to interact with a real API
   addCar(carData: any): Observable<any> {
-    throw new Error('Method not implemented. Use a real API for POST requests.');
+    throw new Error(
+      'Method not implemented. Use a real API for POST requests.'
+    );
   }
 }

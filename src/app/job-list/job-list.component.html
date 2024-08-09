@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+
+<!------------------ Job List Header Section ---------------->
 <div class="relative m-4 md:m-10">
   <div class="flex flex-col md:flex-row justify-between items-center mb-4 text-center">
     <h1 class="text-xl md:text-2xl font-bold">Job List</h1>
@@ -7,19 +9,20 @@
     </button>
   </div>
 
+    <!--------------------- Job Table Section -------------------->
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden shadow-red-100">
       <thead class="bg-red-100 text-center">
         <tr>
-          <th class="py-2 px-4 ">Car</th>
-          <th class="py-2 px-4 ">Job Description</th>
-          <th class="py-2 px-4 ">Assigned Mechanic</th>
-          <th class="py-2 px-4 ">Status</th>
-          <th class="py-2 px-4 ">Actions</th>
+          <th class="py-2 px-4">Car</th>
+          <th class="py-2 px-4">Job Description</th>
+          <th class="py-2 px-4">Assigned Mechanic</th>
+          <th class="py-2 px-4">Status</th>
+          <th class="py-2 px-4">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let job of jobs" class="text-center border-b border-gray-300">
+        <tr *ngFor="let job of jobs; trackBy: trackByJobId" class="text-center border-b border-gray-300">
           <td class="py-2 px-4">
             {{ job.carId.VIN }}, {{ job.carId.make }} {{ job.carId.model }}
           </td>
@@ -27,8 +30,8 @@
           <td class="py-2 px-4">{{ job.mechanic }}</td>
           <td class="py-2 px-4 text-white">
             <select class="p-2 border rounded-lg w-full"
-                    (change)="onStatusChange($event, job.id)"
-                    [value]="job.status"
+                    [(ngModel)]="job.status"
+                    (ngModelChange)="onStatusChange($event, job.id)"
                     [ngClass]="{
                       'bg-green-500': job.status === 'Completed',
                       'bg-blue-500': job.status === 'In Progress',
@@ -46,6 +49,7 @@
     </table>
   </div>
 
+   <!------------------------------- Add Job Form Section -------------------------->
   <div *ngIf="showAddJobForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
     <div class="bg-white p-6 md:p-8 rounded-lg shadow-md w-full max-w-md relative">
       <button (click)="toggleAddJobForm()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">&times;</button>

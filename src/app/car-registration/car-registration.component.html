@@ -1,64 +1,149 @@
 <app-navbar></app-navbar>
-<div class="text-center m-10"><h1 class="mb-5 text-2xl font-bold text-gray-900">Register New Car</h1></div>
 
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="max-w-4xl w-full mx-auto p-6 bg-white shadow-lg shadow-red-100 rounded-lg">
+<!------------------------------- Heading ------------------------------------------>
+<div class="text-center m-10">
+  <h1 class="mb-5 text-2xl font-bold text-gray-900">
+    {{ translationService.translate("registerNewCar") }}
+  </h1>
+</div>
+
+<!------------------------------- Registration form ------------------------------------------>
+<form
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+  class="max-w-4xl w-full mx-auto p-6 bg-white shadow-lg shadow-red-100 rounded-lg"
+>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- Car Details -->
+    <!------------------------------- Car Details ------------------------------------------>
     <div>
-      <h2 class="text-lg font-semibold mb-4">Car Details</h2>
+      <h2 class="text-lg font-semibold mb-4">
+        {{ translationService.translate("carDetails") }}
+      </h2>
       <div class="mb-4">
-        <label for="make" class="block text-gray-700 font-semibold mb-2">Make</label>
-        <select id="make" formControlName="make" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        <label for="make" class="block text-gray-700 font-semibold mb-2">{{
+          translationService.translate("make")
+        }}</label>
+        <select
+          id="make"
+          formControlName="make"
+          class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+        >
           <option *ngFor="let make of makes" [value]="make">{{ make }}</option>
         </select>
       </div>
 
       <div class="mb-4">
-        <label for="model" class="block text-gray-700 font-semibold mb-2">Model</label>
-        <input type="text" id="model" formControlName="model" placeholder="e.g., Camry" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        <label for="model" class="block text-gray-700 font-semibold mb-2">{{
+          translationService.translate("model")
+        }}</label>
+        <input
+          type="text"
+          id="model"
+          formControlName="model"
+          placeholder="e.g., Camry"
+          class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+        />
       </div>
 
       <div class="mb-4">
-        <label for="year" class="block text-gray-700 font-semibold mb-2">Year</label>
-        <input type="number" id="year" formControlName="year" placeholder="e.g., 2020" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        <label for="year" class="block text-gray-700 font-semibold mb-2">{{
+          translationService.translate("year")
+        }}</label>
+        <input
+          type="number"
+          id="year"
+          formControlName="year"
+          placeholder="e.g., 2020"
+          class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+        />
       </div>
 
       <div class="mb-4">
-        <label for="vin" class="block text-gray-700 font-semibold mb-2">VIN</label>
-        <input type="text" id="vin" formControlName="vin" placeholder="e.g., 1HGCM82633A123456" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+        <label for="vin" class="block text-gray-700 font-semibold mb-2">{{
+          translationService.translate("vin")
+        }}</label>
+        <input
+          type="text"
+          id="vin"
+          formControlName="vin"
+          placeholder="e.g., 1HGCM82633A123456"
+          class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+        />
       </div>
     </div>
 
-    <!-- Owner Details -->
+    <!------------------------------- Owner ------------------------------------------>
     <div>
-      <h2 class="text-lg font-semibold mb-4">Owner Details</h2>
+      <h2 class="text-lg font-semibold mb-4">
+        {{ translationService.translate("ownerDetails") }}
+      </h2>
       <fieldset formGroupName="owner">
         <div class="mb-4">
-          <label for="ownerName" class="block text-gray-700 font-semibold mb-2">Name</label>
-          <input type="text" id="ownerName" formControlName="name" placeholder="e.g., John Doe" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+          <label
+            for="ownerName"
+            class="block text-gray-700 font-semibold mb-2"
+            >{{ translationService.translate("name") }}</label
+          >
+          <input
+            type="text"
+            id="ownerName"
+            formControlName="name"
+            placeholder="e.g., John Doe"
+            class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+          />
         </div>
 
         <div class="mb-4">
-          <label for="contactNumber" class="block text-gray-700 font-semibold mb-2">Contact Number</label>
-          <input type="text" id="contactNumber" formControlName="contactNumber" placeholder="e.g., +1 (555) 123-4567" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+          <label
+            for="contactNumber"
+            class="block text-gray-700 font-semibold mb-2"
+            >{{ translationService.translate("contactNumber") }}</label
+          >
+          <input
+            type="text"
+            id="contactNumber"
+            formControlName="contactNumber"
+            placeholder="e.g., +1 (555) 123-4567"
+            class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+          />
         </div>
 
         <div class="mb-4">
-          <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
-          <input type="email" id="email" formControlName="email" placeholder="e.g., johndoe@example.com" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+          <label for="email" class="block text-gray-700 font-semibold mb-2">{{
+            translationService.translate("emailAddress")
+          }}</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="e.g., johndoe@example.com"
+            class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+          />
         </div>
 
         <div class="mb-4">
-          <label for="address" class="block text-gray-700 font-semibold mb-2">Address</label>
-          <input type="text" id="address" formControlName="address" placeholder="e.g., 1234 Elm Street, Springfield, IL 62704" class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
+          <label for="address" class="block text-gray-700 font-semibold mb-2">{{
+            translationService.translate("address")
+          }}</label>
+          <input
+            type="text"
+            id="address"
+            formControlName="address"
+            placeholder="e.g., 1234 Elm Street, Springfield, IL 62704"
+            class="w-full border border-gray-300 rounded-lg py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"
+          />
         </div>
       </fieldset>
     </div>
   </div>
 
   <div class="mt-6">
-    <button type="submit" [disabled]="registerForm.invalid" class="w-full bg-red-900 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 disabled:bg-gray-400 disabled:cursor-not-allowed">
-      Add Car
+    <button
+      type="submit"
+      [disabled]="registerForm.invalid"
+      class="w-full bg-red-900 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 disabled:bg-gray-400 disabled:cursor-not-allowed"
+    >
+      {{ translationService.translate("addCar") }}
     </button>
   </div>
 </form>

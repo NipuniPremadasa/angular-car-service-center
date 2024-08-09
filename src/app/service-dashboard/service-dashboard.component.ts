@@ -5,6 +5,7 @@ import { CarService } from '../car-registration/car.service';
 import { JobService } from '../job-form/job.service';
 import { Chart, registerables } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
+import { TranslationService } from '../translation/translation.service';
 
 Chart.register(...registerables); // Register Chart.js plugins for Angular usage
 @Component({
@@ -12,7 +13,7 @@ Chart.register(...registerables); // Register Chart.js plugins for Angular usage
   standalone: true,
   imports: [CommonModule, NavbarComponent],
   templateUrl: './service-dashboard.component.html',
-  styleUrl: './service-dashboard.component.scss'
+  styleUrl: './service-dashboard.component.scss',
 })
 export class ServiceDashboardComponent {
   numberOfCars: number = 0;
@@ -23,9 +24,14 @@ export class ServiceDashboardComponent {
   chart: any;
   config: any;
 
-  constructor(private carService: CarService, private jobService: JobService, private http: HttpClient) {}
+  constructor(
+    private carService: CarService,
+    private jobService: JobService,
+    private http: HttpClient,
+    public translationService: TranslationService
+  ) {}
 
- 
+  // Initialize chart and update data
   ngAfterViewInit(): void {
     this.loadDoughnutConfig().subscribe((config) => {
       this.config = config;
@@ -52,21 +58,28 @@ export class ServiceDashboardComponent {
     });
   }
 
+  // Load chart configuration from a JSON file
   loadDoughnutConfig() {
     return this.http.get<any>('/assets/charts/doughnut.json');
   }
 
+  // Update the Doughnut chart with the latest data
   updateDoughnutChart(): void {
     if (this.chart) {
       this.chart.destroy();
     }
 
     if (this.config) {
-      this.config.data.datasets[0].data = [this.numberOfCompleterdJobs, this.numberOfNotStartedJobs, this.numberOfInProgressJobs];
+      this.config.data.datasets[0].data = [
+        this.numberOfCompleterdJobs,
+        this.numberOfNotStartedJobs,
+        this.numberOfInProgressJobs,
+      ];
       this.chart = new Chart('doughnutChart', this.config);
     }
   }
 
+  // Calculate the percentage of a specific job status
   getPercentage(count: number): number {
     return this.numberOfJobs > 0 ? (count / this.numberOfJobs) * 100 : 0;
   }

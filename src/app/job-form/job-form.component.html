@@ -1,36 +1,44 @@
-<div class="text-center m-5"><h1 class="mb-5 text-2xl font-bold text-gray-900">Add New Job</h1></div>
+<div class="text-center m-5">
+  <h1 class="mb-5 text-2xl font-bold text-gray-900">Add New Job</h1>
+</div>
+
 <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="max-w-4xl w-full mx-auto p-6 bg-white shadow-lg rounded-lg">
-    <!-- Car Selection -->
-    <div class="mb-6">
-      <label for="car" class="block text-gray-700 text-sm font-semibold mb-2">Car</label>
-      <select id="car" formControlName="carId" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
-        <option *ngFor="let car of cars" [value]="car.carId">{{car.VIN}} ,{{ car.make }} ,{{ car.model }}</option>
-      </select>
-      <div *ngIf="jobForm.controls['carId'].invalid && jobForm.controls['carId'].touched" class="text-red-500 text-sm mt-1">
-        Car is required.
-      </div>
+  
+  <!-- Car Selection -->
+  <div class="mb-6">
+    <label for="car" class="block text-gray-700 text-sm font-semibold mb-2">Car</label>
+    <select id="car" formControlName="car" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
+      <option *ngFor="let car of cars" [ngValue]="car">{{car.VIN}} ,{{ car.make }} ,{{ car.model }}</option>
+    </select>
+    <div *ngIf="jobForm.controls['car'].invalid && jobForm.controls['car'].touched" class="text-red-500 text-sm mt-1">
+      Car is required.
     </div>
-  
-    <!-- Job Description -->
-    <div class="mb-6">
-      <label for="description" class="block text-gray-700 text-sm font-semibold mb-2">Job Description</label>
-      <textarea id="description" formControlName="description" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5" rows="4"></textarea>
-      <div *ngIf="jobForm.controls['description'].invalid && jobForm.controls['description'].touched" class="text-red-500 text-sm mt-1">
-        Description is required.
-      </div>
+  </div>
+
+  <!-- Job Description -->
+  <div class="mb-6">
+    <label for="description" class="block text-gray-700 text-sm font-semibold mb-2">Job Description</label>
+    <textarea id="description" formControlName="description" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5" rows="4"></textarea>
+    <div *ngIf="jobForm.controls['description'].invalid && jobForm.controls['description'].touched" class="text-red-500 text-sm mt-1">
+      Description is required.
     </div>
-  
-    <!-- Assigned Mechanic -->
-    <div class="mb-6">
-      <label for="mechanic" class="block text-gray-700 text-sm font-semibold mb-2">Assigned Mechanic</label>
-      <input id="mechanic" type="text" formControlName="mechanic" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
-      <div *ngIf="jobForm.controls['mechanic'].invalid && jobForm.controls['mechanic'].touched" class="text-red-500 text-sm mt-1">
-        Mechanic is required.
-      </div>
+  </div>
+
+  <!-- Assigned Mechanic -->
+  <div class="mb-6">
+    <label for="mechanic" class="block text-gray-700 text-sm font-semibold mb-2">Assigned Mechanic</label>
+    <input id="mechanic" type="text" formControlName="mechanic" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
+    <div *ngIf="jobForm.controls['mechanic'].invalid && jobForm.controls['mechanic'].touched" class="text-red-500 text-sm mt-1">
+      Mechanic is required.
     </div>
-  
-    <button type="submit" class="bg-red-900 text-white p-2.5 rounded-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50" [disabled]="jobForm.invalid">
-      Add Job
-    </button>
-  </form>
-  
+  </div>
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    [disabled]="jobForm.invalid"
+    class="w-full bg-red-900 text-white py-2 px-4 rounded-lg font-semibold hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 disabled:bg-gray-400 disabled:cursor-not-allowed"
+  >
+    Add a new
+  </button>
+</form>
