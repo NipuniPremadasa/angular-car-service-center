@@ -6,8 +6,7 @@ import { JobService } from '../job-form/job.service';
 import { Chart, registerables } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
 
-Chart.register(...registerables); // Register Chart.js plugins for Angular usage. This must be done in the main AppModule.ts file.
-
+Chart.register(...registerables); // Register Chart.js plugins for Angular usage
 @Component({
   selector: 'app-service-dashboard',
   standalone: true,
@@ -19,28 +18,10 @@ export class ServiceDashboardComponent {
   numberOfCars: number = 0;
   numberOfJobs: number = 0;
   numberOfInProgressJobs: number = 0;
+  numberOfCompleterdJobs: number = 0;
+  numberOfNotStartedJobs: number = 0;
   chart: any;
   config: any;
-
-  // public config: any = {
-  //   type: 'doughnut',
-  //   data: {
-  //     labels: [
-  //       'Red',
-  //       'Blue',
-  //       'Yellow'
-  //     ],
-  //     datasets: [{
-  //       label: 'My First Dataset',
-  //       data: [this.numberOfCars, this.numberOfJobs, this.numberOfInProgressJobs],
-  //       backgroundColor: [
-  //         'rgb(255, 99, 132)',
-  //         'rgb(54, 162, 235)',
-  //         'rgb(255, 205, 86)'
-  //       ],
-  //       hoverOffset: 4
-  //     }]
-  //   }};
 
   constructor(private carService: CarService, private jobService: JobService, private http: HttpClient) {}
 
@@ -61,6 +42,12 @@ export class ServiceDashboardComponent {
       this.numberOfInProgressJobs = jobs.filter(
         (job) => job.status === 'In Progress'
       ).length;
+      this.numberOfCompleterdJobs = jobs.filter(
+        (job) => job.status === 'Completed'
+      ).length;
+      this.numberOfNotStartedJobs = jobs.filter(
+        (job) => job.status === 'Not Started'
+      ).length;
       this.updateDoughnutChart();
     });
   }
@@ -75,8 +62,12 @@ export class ServiceDashboardComponent {
     }
 
     if (this.config) {
-      this.config.data.datasets[0].data = [this.numberOfCars, this.numberOfJobs, this.numberOfInProgressJobs];
+      this.config.data.datasets[0].data = [this.numberOfCompleterdJobs, this.numberOfNotStartedJobs, this.numberOfInProgressJobs];
       this.chart = new Chart('doughnutChart', this.config);
     }
+  }
+
+  getPercentage(count: number): number {
+    return this.numberOfJobs > 0 ? (count / this.numberOfJobs) * 100 : 0;
   }
 }

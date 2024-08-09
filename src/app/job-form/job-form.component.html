@@ -29,16 +29,7 @@
       </div>
     </div>
   
-    <!-- Estimated Completion Time -->
-    <!-- <div class="mb-6">
-      <label for="estimatedCompletionTime" class="block text-gray-700 text-sm font-semibold mb-2">Estimated Completion Time</label>
-      <input id="estimatedCompletionTime" type="datetime-local" formControlName="estimatedCompletionTime" class="block w-full border border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 p-2.5">
-      <div *ngIf="jobForm.controls['estimatedCompletionTime'].invalid && jobForm.controls['estimatedCompletionTime'].touched" class="text-red-500 text-sm mt-1">
-        Estimated Completion Time is required.
-      </div>
-    </div> -->
-  
-    <button type="submit" class="bg-blue-500 text-white p-2.5 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" [disabled]="jobForm.invalid">
+    <button type="submit" class="bg-red-900 text-white p-2.5 rounded-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50" [disabled]="jobForm.invalid">
       Add Job
     </button>
   </form>

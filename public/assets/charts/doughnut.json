@@ -1,7 +1,7 @@
 {
     "type": "doughnut",
     "data": {
-      "labels": ["Red", "Blue", "Yellow"],
+      "labels": ["Completed Jobs", "Not Started Jobs", "In Progress Jobs"],
       "datasets": [{
         "data": [0, 0, 0],
         "backgroundColor": [

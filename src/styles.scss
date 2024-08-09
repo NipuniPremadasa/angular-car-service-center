@@ -2,3 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css or styles.scss */
+body {
+    @apply bg-cover bg-center bg-fixed; /* Tailwind utility classes */
+    background-image: url('/assets/images/red2.jpg'); /* Adjust the path as needed */
+  }
+  
