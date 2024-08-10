@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CarDetails } from '../interfaces/car.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +11,7 @@ export class CarService {
 
   constructor(private http: HttpClient) {}
 
-  getCars(): Observable<any[]> {
-    return this.http.get<any[]>(this.carUrl);
-  }
-
-  // This method is meant to interact with a real API
-  addCar(carData: any): Observable<any> {
-    throw new Error(
-      'Method not implemented. Use a real API for POST requests.'
-    );
+  getCars(): Observable<CarDetails[]> {
+    return this.http.get<CarDetails[]>(this.carUrl);
   }
 }

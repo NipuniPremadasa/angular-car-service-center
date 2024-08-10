@@ -34,5 +34,10 @@
   "addCar": "Añadir coche",
   "carService": "Servicio de coche",
   "carAddedSuccessfully": "Coche añadido con éxito",
-  "FormInvalid": "Formulario no válido"
+  "FormInvalid": "Formulario no válido",
+  "allJobs": "Todos los trabajos",
+  "allCars": "Todos los coches",
+  "completedJobs": "Trabajos completados",
+  "notStartedJobs": "Trabajos no iniciados",
+  "inProgressJobs": "Trabajos en progreso"
 }

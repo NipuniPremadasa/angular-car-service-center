@@ -22,7 +22,7 @@ export class ServiceDashboardComponent {
   numberOfCompleterdJobs: number = 0;
   numberOfNotStartedJobs: number = 0;
   chart: Chart | undefined;
-  config: any;
+  doughnutConfig: any;
 
   constructor(
     private carService: CarService,
@@ -34,7 +34,7 @@ export class ServiceDashboardComponent {
   // Initialize chart and update data
   ngAfterViewInit(): void {
     this.loadDoughnutConfig().subscribe((config) => {
-      this.config = config;
+      this.doughnutConfig = config;
       this.updateDoughnutChart();
     });
 
@@ -69,13 +69,13 @@ export class ServiceDashboardComponent {
       this.chart.destroy();
     }
 
-    if (this.config) {
-      this.config.data.datasets[0].data = [
+    if (this.doughnutConfig) {
+      this.doughnutConfig.data.datasets[0].data = [
         this.numberOfCompleterdJobs,
         this.numberOfNotStartedJobs,
         this.numberOfInProgressJobs,
       ];
-      this.chart = new Chart('doughnutChart', this.config);
+      this.chart = new Chart('doughnutChart', this.doughnutConfig);
     }
   }
 

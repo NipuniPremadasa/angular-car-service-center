@@ -23,6 +23,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let job of jobs; trackBy: trackByJobId" class="text-center border-b border-gray-300">
+          <!-- Use job.car instead of job.carId -->
           <td class="py-2 px-4">
             {{ job.carId.VIN }}, {{ job.carId.make }} {{ job.carId.model }}
           </td>
@@ -33,16 +34,23 @@
                     [(ngModel)]="job.status"
                     (ngModelChange)="onStatusChange($event, job.id)"
                     [ngClass]="{
-                      'bg-green-500': job.status === 'Completed',
-                      'bg-blue-500': job.status === 'In Progress',
-                      'bg-gray-500': job.status === 'Not Started'
+                      'bg-green-500': job.status === JobStatus.Completed,
+                      'bg-blue-500': job.status === JobStatus.InProgress,
+                      'bg-gray-500': job.status === JobStatus.NotStarted
                     }">
+              <!-- Use enum values instead of raw strings -->
               <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
             </select>
           </td>
           <td class="py-2 px-4">
-            <button class="bg-blue-500 text-white p-2 mx-2 rounded hover:bg-blue-600" (click)="updateStatus(job.id, 'In Progress')">Start</button>
-            <button class="bg-green-500 text-white p-2 mx-2 rounded hover:bg-green-600" (click)="updateStatus(job.id, 'Completed')">Complete</button>
+            <button class="bg-blue-500 text-white p-2 mx-2 rounded hover:bg-blue-600" 
+                    (click)="updateStatus(job.id, JobStatus.InProgress)">
+              Start
+            </button>
+            <button class="bg-green-500 text-white p-2 mx-2 rounded hover:bg-green-600" 
+                    (click)="updateStatus(job.id, JobStatus.Completed)">
+              Complete
+            </button>
           </td>
         </tr>
       </tbody>

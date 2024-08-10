@@ -34,5 +34,10 @@
   "addCar": "Add Car",
   "carService": "Car Service",
   "carAddedSuccessfully": "Car Added Successfully",
-  "FormInvalid": "Form Invalid"
+  "FormInvalid": "Form Invalid",
+  "allJobs": "All Jobs",
+  "allCars": "All Cars",
+  "completedJobs": "Completed Jobs",
+  "notStartedJobs": "Not Started Jobs",
+  "inProgressJobs": "In Progress Jobs"
 }

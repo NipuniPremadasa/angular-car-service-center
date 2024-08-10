@@ -9,6 +9,7 @@ import {
 import { CarService } from '../car-registration/car.service';
 import { TranslationService } from '../translation/translation.service';
 import { Router } from '@angular/router';
+import { CarDetails } from '../interfaces/car.model';
 
 @Component({
   selector: 'app-job-form',
@@ -21,7 +22,7 @@ export class JobFormComponent implements OnInit {
   @Output() jobAdded = new EventEmitter<void>();
 
   jobForm!: FormGroup;
-  cars: any[] = [];
+  cars: CarDetails[] = [];
   message: string = '';
   isSuccess: boolean = false;
 

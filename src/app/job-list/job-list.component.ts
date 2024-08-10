@@ -5,6 +5,7 @@ import { JobService } from '../job-form/job.service';
 import { JobFormComponent } from '../job-form/job-form.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { TranslationService } from '../translation/translation.service';
+import { JobDetails, JobStatus } from '../interfaces/job.model';
 
 @Component({
   selector: 'app-job-list',
@@ -14,10 +15,13 @@ import { TranslationService } from '../translation/translation.service';
   styleUrls: ['./job-list.component.scss'],
 })
 export class JobListComponent {
-  jobs: any[] = [];
+  jobs: JobDetails[] = [];
   showAddJobForm: boolean = false;
-  statuses: string[] = ['Not Started', 'In Progress', 'Completed'];
+  statuses: JobStatus[] = [JobStatus.NotStarted, JobStatus.InProgress, JobStatus.Completed];
   status!: string;
+
+    // Expose the JobStatus enum to the template
+    public JobStatus = JobStatus;
 
   constructor(
     private jobService: JobService,
@@ -61,7 +65,7 @@ export class JobListComponent {
   }
 
   // Tracks jobs by their ID for efficient rendering
-  trackByJobId(index: number, job: any): number {
+  trackByJobId(index: number, job: JobDetails): number {
     return job.id;
   }
 }

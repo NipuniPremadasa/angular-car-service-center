@@ -1,14 +1,19 @@
+export enum JobStatus {
+  NotStarted = 'Not Started',
+  InProgress = 'In Progress',
+  Completed = 'Completed',
+}
 export interface Car {
     VIN: string;
     make: string;
     model: string;
   }
   
-  export interface Job {
+  export interface JobDetails {
     id: number;
-    car: Car; 
+    carId: Car; 
     description: string;
     mechanic: string;
-    status: 'Not Started' | 'In Progress' | 'Completed';
+    status: JobStatus;
   }
   
