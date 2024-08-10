@@ -4,16 +4,15 @@ export enum JobStatus {
   Completed = 'Completed',
 }
 export interface Car {
-    VIN: string;
-    make: string;
-    model: string;
-  }
-  
-  export interface JobDetails {
-    id: number;
-    carId: Car; 
-    description: string;
-    mechanic: string;
-    status: JobStatus;
-  }
-  
+  VIN: string;
+  make: string;
+  model: string;
+}
+
+export interface JobDetails {
+  id: number;
+  carId: Car;
+  description: string;
+  mechanic: string;
+  status: JobStatus;
+}

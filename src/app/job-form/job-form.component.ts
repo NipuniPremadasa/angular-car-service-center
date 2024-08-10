@@ -16,7 +16,7 @@ import { CarDetails } from '../interfaces/car.model';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './job-form.component.html',
-  styleUrls: ['./job-form.component.scss'], 
+  styleUrls: ['./job-form.component.scss'],
 })
 export class JobFormComponent implements OnInit {
   @Output() jobAdded = new EventEmitter<void>();
@@ -30,7 +30,7 @@ export class JobFormComponent implements OnInit {
     private fb: FormBuilder,
     private carService: CarService,
     public translationService: TranslationService,
-    private router: Router 
+    private router: Router
   ) {
     this.initializeForm();
   }
@@ -42,7 +42,7 @@ export class JobFormComponent implements OnInit {
   // Initializes the job form with default values and validation rules.
   private initializeForm(): void {
     this.jobForm = this.fb.group({
-      car: [null, Validators.required], 
+      car: [null, Validators.required],
       description: ['', Validators.required],
       mechanic: ['', Validators.required],
     });
@@ -63,7 +63,7 @@ export class JobFormComponent implements OnInit {
       // this.router.navigate(['/job-list']); // Navigate to the job list page
       this.message = 'Job Added Successfully';
       this.isSuccess = true;
-    }else {
+    } else {
       this.message = 'Form Invalid';
       this.isSuccess = false;
     }

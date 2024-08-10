@@ -17,18 +17,22 @@ import { JobDetails, JobStatus } from '../interfaces/job.model';
 export class JobListComponent {
   jobs: JobDetails[] = [];
   showAddJobForm: boolean = false;
-  statuses: JobStatus[] = [JobStatus.NotStarted, JobStatus.InProgress, JobStatus.Completed];
+  statuses: JobStatus[] = [
+    JobStatus.NotStarted,
+    JobStatus.InProgress,
+    JobStatus.Completed,
+  ];
   status!: string;
 
-    // Expose the JobStatus enum to the template
-    public JobStatus = JobStatus;
+  // Expose the JobStatus enum to the template
+  public JobStatus = JobStatus;
 
   constructor(
     private jobService: JobService,
     public translationService: TranslationService
   ) {}
 
-   // Initializes the component and loads the jobs
+  // Initializes the component and loads the jobs
   ngOnInit(): void {
     this.loadJobs();
   }

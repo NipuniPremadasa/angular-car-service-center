@@ -10,7 +10,11 @@ import { JobDetails, JobStatus } from '../interfaces/job.model';
 export class JobService {
   private jobUrl = 'assets/jobs.json';
   private jobs: JobDetails[] = [];
-  statuses: JobStatus[] = [JobStatus.NotStarted, JobStatus.InProgress, JobStatus.Completed];
+  statuses: JobStatus[] = [
+    JobStatus.NotStarted,
+    JobStatus.InProgress,
+    JobStatus.Completed,
+  ];
 
   constructor(private http: HttpClient) {}
 
@@ -36,7 +40,10 @@ export class JobService {
   }
 
   // Updates the status of a specific job by its ID
-  updateJobStatus(jobId: number, status: JobStatus): Observable<JobDetails | undefined> {
+  updateJobStatus(
+    jobId: number,
+    status: JobStatus
+  ): Observable<JobDetails | undefined> {
     const job = this.jobs.find((job) => job.id === jobId);
     if (job) {
       job.status = status;

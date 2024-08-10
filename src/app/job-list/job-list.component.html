@@ -2,16 +2,23 @@
 
 <!------------------ Job List Header Section ---------------->
 <div class="relative m-4 md:m-10">
-  <div class="flex flex-col md:flex-row justify-between items-center mb-4 text-center">
+  <div
+    class="flex flex-col md:flex-row justify-between items-center mb-4 text-center"
+  >
     <h1 class="text-xl md:text-2xl font-bold">Job List</h1>
-    <button (click)="toggleAddJobForm()" class="bg-blue-500 text-white p-2 rounded hover:bg-red-800 mt-4 md:mt-0">
+    <button
+      (click)="toggleAddJobForm()"
+      class="bg-blue-500 text-white p-2 rounded hover:bg-red-800 mt-4 md:mt-0"
+    >
       + Add New Job
     </button>
   </div>
 
-    <!--------------------- Job Table Section -------------------->
+  <!--------------------- Job Table Section -------------------->
   <div class="overflow-x-auto">
-    <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden shadow-red-100">
+    <table
+      class="min-w-full bg-white shadow-md rounded-lg overflow-hidden shadow-red-100"
+    >
       <thead class="bg-red-100 text-center">
         <tr>
           <th class="py-2 px-4">Car</th>
@@ -22,33 +29,42 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let job of jobs; trackBy: trackByJobId" class="text-center border-b border-gray-300">
-          <!-- Use job.car instead of job.carId -->
+        <tr
+          *ngFor="let job of jobs; trackBy: trackByJobId"
+          class="text-center border-b border-gray-300"
+        >
           <td class="py-2 px-4">
             {{ job.carId.VIN }}, {{ job.carId.make }} {{ job.carId.model }}
           </td>
           <td class="py-2 px-4">{{ job.description }}</td>
           <td class="py-2 px-4">{{ job.mechanic }}</td>
           <td class="py-2 px-4 text-white">
-            <select class="p-2 border rounded-lg w-full"
-                    [(ngModel)]="job.status"
-                    (ngModelChange)="onStatusChange($event, job.id)"
-                    [ngClass]="{
-                      'bg-green-500': job.status === JobStatus.Completed,
-                      'bg-blue-500': job.status === JobStatus.InProgress,
-                      'bg-gray-500': job.status === JobStatus.NotStarted
-                    }">
-              <!-- Use enum values instead of raw strings -->
-              <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+            <select
+              class="p-2 border rounded-lg w-full"
+              [(ngModel)]="job.status"
+              (ngModelChange)="onStatusChange($event, job.id)"
+              [ngClass]="{
+                'bg-green-500': job.status === JobStatus.Completed,
+                'bg-blue-500': job.status === JobStatus.InProgress,
+                'bg-gray-500': job.status === JobStatus.NotStarted
+              }"
+            >
+              <option *ngFor="let status of statuses" [value]="status">
+                {{ status }}
+              </option>
             </select>
           </td>
           <td class="py-2 px-4">
-            <button class="bg-blue-500 text-white p-2 mx-2 rounded hover:bg-blue-600" 
-                    (click)="updateStatus(job.id, JobStatus.InProgress)">
+            <button
+              class="bg-blue-500 text-white p-2 mx-2 rounded hover:bg-blue-600"
+              (click)="updateStatus(job.id, JobStatus.InProgress)"
+            >
               Start
             </button>
-            <button class="bg-green-500 text-white p-2 mx-2 rounded hover:bg-green-600" 
-                    (click)="updateStatus(job.id, JobStatus.Completed)">
+            <button
+              class="bg-green-500 text-white p-2 mx-2 rounded hover:bg-green-600"
+              (click)="updateStatus(job.id, JobStatus.Completed)"
+            >
               Complete
             </button>
           </td>
@@ -57,10 +73,20 @@
     </table>
   </div>
 
-   <!------------------------------- Add Job Form Section -------------------------->
-  <div *ngIf="showAddJobForm" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md w-full max-w-md relative">
-      <button (click)="toggleAddJobForm()" class="absolute top-2 right-2 text-gray-600 hover:text-gray-800">&times;</button>
+  <!------------------------------- Add Job Form Section -------------------------->
+  <div
+    *ngIf="showAddJobForm"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+  >
+    <div
+      class="bg-white p-6 md:p-8 rounded-lg shadow-md w-full max-w-md relative"
+    >
+      <button
+        (click)="toggleAddJobForm()"
+        class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+      >
+        &times;
+      </button>
       <app-job-form (jobAdded)="onJobAdded()"></app-job-form>
     </div>
   </div>

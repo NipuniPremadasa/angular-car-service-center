@@ -38,7 +38,9 @@
               <p class="text-3xl font-semibold leading-none">
                 {{ numberOfCars }}
               </p>
-              <p class="capitalize">{{translationService.translate("allCars")}}</p>
+              <p class="capitalize">
+                {{ translationService.translate("allCars") }}
+              </p>
             </div>
           </div>
           <div
@@ -62,7 +64,9 @@
               <p class="text-3xl font-semibold leading-none">
                 {{ numberOfJobs }}
               </p>
-              <p class="capitalize">{{translationService.translate("allJobs")}}</p>
+              <p class="capitalize">
+                {{ translationService.translate("allJobs") }}
+              </p>
             </div>
           </div>
           <div
@@ -86,7 +90,9 @@
               <p class="text-3xl font-semibold leading-none">
                 {{ numberOfInProgressJobs }}
               </p>
-              <p class="capitalize">{{translationService.translate("inProgressJobs")}}</p>
+              <p class="capitalize">
+                {{ translationService.translate("inProgressJobs") }}
+              </p>
             </div>
           </div>
         </div>
@@ -99,17 +105,20 @@
         </div>
         <div class="w-full md:w-1/2 px-4 md:px-14 my-auto font-bold">
           <p class="p-2">
-            {{translationService.translate("completedJobs")}}: {{ numberOfCompleterdJobs }} ({{
+            {{ translationService.translate("completedJobs") }}:
+            {{ numberOfCompleterdJobs }} ({{
               getPercentage(numberOfCompleterdJobs) | number : "1.2-2"
             }}%)
           </p>
           <p class="p-2">
-            {{translationService.translate("notStartedJobs")}}: {{ numberOfNotStartedJobs }} ({{
+            {{ translationService.translate("notStartedJobs") }}:
+            {{ numberOfNotStartedJobs }} ({{
               getPercentage(numberOfNotStartedJobs) | number : "1.2-2"
             }}%)
           </p>
           <p class="p-2">
-            {{translationService.translate("inProgressJobs")}}: {{ numberOfInProgressJobs }} ({{
+            {{ translationService.translate("inProgressJobs") }}:
+            {{ numberOfInProgressJobs }} ({{
               getPercentage(numberOfInProgressJobs) | number : "1.2-2"
             }}%)
           </p>
