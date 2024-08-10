@@ -22,6 +22,8 @@ export class JobFormComponent implements OnInit {
 
   jobForm!: FormGroup;
   cars: any[] = [];
+  message: string = '';
+  isSuccess: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -56,8 +58,13 @@ export class JobFormComponent implements OnInit {
   onSubmit(): void {
     if (this.jobForm.valid) {
       console.log(this.jobForm.value);
-      this.jobAdded.emit(); // Emit the job added event
-      this.router.navigate(['/job-list']); // Navigate to the job list page
+      // this.jobAdded.emit(); // Emit the job added event
+      // this.router.navigate(['/job-list']); // Navigate to the job list page
+      this.message = 'Job Added Successfully';
+      this.isSuccess = true;
+    }else {
+      this.message = 'Form Invalid';
+      this.isSuccess = false;
     }
   }
 }

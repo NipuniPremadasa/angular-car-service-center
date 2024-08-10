@@ -32,5 +32,7 @@
   "emailAddress": "Email Address",
   "address": "Address",
   "addCar": "Add Car",
-  "carService": "Car Service"
+  "carService": "Car Service",
+  "carAddedSuccessfully": "Car Added Successfully",
+  "FormInvalid": "Form Invalid"
 }

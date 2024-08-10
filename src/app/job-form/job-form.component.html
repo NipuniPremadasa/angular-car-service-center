@@ -34,6 +34,7 @@
   </div>
 
   <!-- Submit Button -->
+   <div>
   <button
     type="submit"
     [disabled]="jobForm.invalid"
@@ -41,4 +42,8 @@
   >
     Add a new
   </button>
+  <div *ngIf="message" [ngClass]="{'text-green-500': isSuccess, 'text-red-500': !isSuccess}" class="mt-4">
+    {{ message }}
+  </div>
+</div>
 </form>

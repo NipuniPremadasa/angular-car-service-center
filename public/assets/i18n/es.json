@@ -32,5 +32,7 @@
   "emailAddress": "Dirección de correo electrónico",
   "address": "Dirección",
   "addCar": "Añadir coche",
-  "carService": "Servicio de coche"
+  "carService": "Servicio de coche",
+  "carAddedSuccessfully": "Coche añadido con éxito",
+  "FormInvalid": "Formulario no válido"
 }

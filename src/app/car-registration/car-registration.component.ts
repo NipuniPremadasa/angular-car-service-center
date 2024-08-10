@@ -19,6 +19,8 @@ import { TranslationService } from '../translation/translation.service';
 export class CarRegistrationComponent implements OnInit {
   registerForm: FormGroup;
   makes: string[] = ['Toyota', 'Honda', 'Ford', 'BMW'];
+  message: string = '';
+  isSuccess: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -61,6 +63,11 @@ export class CarRegistrationComponent implements OnInit {
   onSubmit(): void {
     if (this.registerForm.valid) {
       console.log(this.registerForm.value);
+      this.message = this.translationService.translate('carAddedSuccessfully');
+      this.isSuccess = true;
+    }else{
+      this.message = this.translationService.translate('formInvalid');
+      this.isSuccess = false;
     }
   }
 }
