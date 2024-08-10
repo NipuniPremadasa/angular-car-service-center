@@ -17,6 +17,7 @@ export class JobListComponent {
   jobs: any[] = [];
   showAddJobForm: boolean = false;
   statuses: string[] = ['Not Started', 'In Progress', 'Completed'];
+  status!: string;
 
   constructor(
     private jobService: JobService,
@@ -48,9 +49,10 @@ export class JobListComponent {
 
   // Updates the status of a job and reloads the jobs list
   updateStatus(jobId: number, status: string): void {
-    this.jobService.updateJobStatus(jobId, status).subscribe(() => {
-      this.loadJobs();
-    });
+    // this.jobService.updateJobStatus(jobId, status).subscribe(() => {
+    //   this.loadJobs();
+    // });
+    this.status = status;
   }
 
   // Handles status changes for a job
