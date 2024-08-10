@@ -47,7 +47,7 @@ The Car Service Center Management System is a web application built using Angula
     ```
 
 ## Usage Instructions
-- **Car Registration**: Navigate to the "Car Registration" page to add new cars using the provided form.
+- **Car Registration**: Navigate to the "Car Registration" page to add new cars using the provided form. This page fully supports multiple languages.
 - **Job Management**: Use the "Job Management" page to add jobs, update job statuses, and view job details.
 - **Dashboard**: Visit the "Dashboard" to view statistics on the number of cars and jobs, including a visual representation of job statuses.
 
