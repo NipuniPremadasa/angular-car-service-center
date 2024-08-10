@@ -1,27 +1,67 @@
-# AngularCarServiceCenter
+# Car Service Center Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+## Project Description
+The Car Service Center Management System is a web application built using Angular 18 with standalone components. It is designed to manage car services in a service center, allowing users to register cars, manage job statuses, and view statistics on a dashboard. The application supports two languages: English and Spanish, and uses Tailwind CSS for styling, along with SCSS.
 
-## Development server
+## Key Features
+- **Car Registration**: 
+  - A validated registration form on the car registration page allows users to add new cars to the service center.
+  
+- **Job Management**: 
+  - Users can add jobs for cars, manage job statuses through an intuitive interface with active buttons and a dropdown menu.
+  
+- **Dashboard**: 
+  - Displays the number of cars in the service center and the number of jobs in progress, along with their status.
+  - Shows job status as a percentage using a doughnut chart created with Chart.js.
+  
+- **Multi-Language Support**: 
+  - The application supports English and Spanish, with all text managed via language files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+- **Angular 18**: Standalone components
+- **Tailwind CSS**: For styling
+- **SCSS**: For additional styling
+- **Chart.js**: For creating doughnut charts on the dashboard
+- **Lint**: To ensure code quality and consistency
 
-## Code scaffolding
+## Installation Instructions
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/NipuniPremadasa/angular-car-service-center.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd angular-car-service-center
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the application:
+    ```bash
+    ng serve
+    ```
+5. Open your browser and go to:
+    ```
+    http://localhost:4200
+    ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage Instructions
+- **Car Registration**: Navigate to the "Car Registration" page to add new cars using the provided form.
+- **Job Management**: Use the "Job Management" page to add jobs, update job statuses, and view job details.
+- **Dashboard**: Visit the "Dashboard" to view statistics on the number of cars and jobs, including a visual representation of job statuses.
 
-## Build
+## Future Improvements
+- Replace the use of the "any" keyword with proper TypeScript interfaces and models.
+- Ensure all text is included in the `language.json` files to support multi-language functionality.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Project Structure
+The project consists of three main pages:
+1. **Car Registration**: For registering new cars.
+2. **Job Management**: For managing job details and statuses.
+3. **Dashboard**: For displaying statistics and job progress.
 
-## Running unit tests
+## Contributors
+- Nipuni Premadasa
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
